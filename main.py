@@ -1,13 +1,14 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import graph1 as g1
+import graph2 as g2
 from graph_util import * 
 
 
 plt.subplot()
-G = build_G(g1.couches)
+G = build_G(g2.couches)
 Ford_Ferkuson(G)
-#print(G.nodes['e'])
-#print(G.edges['e', 1]['cap'])
-#nx.draw(G, with_labels=True, font_weight='bold')
-#plt.show()
+res, autre = nx.maximum_flow(G, 'e', 's')
+print("resultat du package networkx")
+print(res)
+
